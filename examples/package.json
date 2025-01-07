@@ -13,6 +13,7 @@
         "lint:types": "tsc --noEmit"
     },
     "dependencies": {
+        "@nuzar-components/univer-collaboration": "workspace:*",
         "@univerjs/action-recorder": "workspace:*",
         "@univerjs/core": "workspace:*",
         "@univerjs/data-validation": "workspace:*",

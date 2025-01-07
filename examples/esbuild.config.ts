@@ -41,6 +41,9 @@ const monacoEditorEntryPoints = [
     'vs/editor/editor.worker.js',
 ];
 
+/**
+ *
+ */
 function monacoBuildTask() {
     return esbuild.build({
         entryPoints: monacoEditorEntryPoints.map((entry) => `./node_modules/monaco-editor/esm/${entry}`),
@@ -75,6 +78,10 @@ if (!args.watch) {
 const entryPoints = [
     // homepage
     './src/main.tsx',
+
+    // sheets-simple
+    './src/sheets-simple/main.ts',
+    './src/sheets-simple/worker.ts',
 
     // sheets
     './src/sheets/main.ts',
@@ -162,6 +169,9 @@ const config: SameShape<BuildOptions, BuildOptions> = {
     define,
 };
 
+/**
+ *
+ */
 async function main() {
     if (args.watch) {
         const ctx = await esbuild.context(config);

@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-export * from './default-workbook-data-default-style';
-export * from './default-workbook-data-demo';
-export * from './default-workbook-data-demo1';
-export * from './default-workbook-data-demo2';
-export * from './default-workbook-data-demo3';
-export * from './default-workbook-data-demo4';
-export * from './default-workbook-data-demo5';
-export * from './default-workbook-data-demo6';
-export * from './default-workbook-data-demo7';
-export * from './default-workbook-data-demo8';
+import type { Config } from 'tailwindcss';
+import preset from '@univerjs-infra/shared/tailwind';
 
-export * from './default-workbook-data-simple';
+const config: Config = {
+    presets: [preset],
+    content: [
+        './src/**/*.{js,ts,jsx,tsx}',
+    ],
+};
+
+export default config;

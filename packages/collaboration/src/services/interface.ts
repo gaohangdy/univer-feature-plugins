@@ -14,15 +14,8 @@
  * limitations under the License.
  */
 
-export * from './default-workbook-data-default-style';
-export * from './default-workbook-data-demo';
-export * from './default-workbook-data-demo1';
-export * from './default-workbook-data-demo2';
-export * from './default-workbook-data-demo3';
-export * from './default-workbook-data-demo4';
-export * from './default-workbook-data-demo5';
-export * from './default-workbook-data-demo6';
-export * from './default-workbook-data-demo7';
-export * from './default-workbook-data-demo8';
+import type { IRange } from '@univerjs/core';
 
-export * from './default-workbook-data-simple';
+export interface IRemoteSelection {
+    selections: IRange[];
+}
