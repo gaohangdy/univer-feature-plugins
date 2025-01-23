@@ -91,7 +91,7 @@ export class CollaborationService extends Disposable {
                 return { initContent: JSON.stringify(config.data) };
             },
         });
-        this._injector.get(ILogService).log('协同服务连接成功');
+        // this._injector.get(ILogService).log('协同服务连接成功');
 
         const activityOptions: IActivityJoinOptions = { autoCreate: { ephemeral: true, worldPermissions: ['join', 'view_state', 'set_state'] } };
         this._activity = await domain.activities().join('universheet', config?.contentId, activityOptions);
@@ -113,13 +113,13 @@ export class CollaborationService extends Disposable {
             });
         });
         this._commandService.executeCommand(ParticipantsChangeOperation.id, aliveParticipants);
-        this._injector.get(ILogService).log('活动用户信息：', aliveParticipants);
+        // this._injector.get(ILogService).log('活动用户信息：', aliveParticipants);
 
         this._realTimeObject = model.root();
-        this._injector.get(ILogService).log('实时对象值：', model.root().value());
+        // this._injector.get(ILogService).log('实时对象值：', model.root().value());
         /** 创建实例 */
         this._univerInstanceService.createUnit(UniverInstanceType.UNIVER_SHEET, JSON.parse(model.root().value().initContent));
         // this._univerInstanceService.createUnit(UniverInstanceType.UNIVER_SHEET, config.data);
-        this._injector.get(ILogService).log('创建实例成功');
+        // this._injector.get(ILogService).log('创建实例成功');
     }
 }

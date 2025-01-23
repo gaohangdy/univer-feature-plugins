@@ -69,12 +69,12 @@ export class ContentService extends Disposable {
             this._rtContent.set('content', commandInfo);
 
             // 更新协同对象中的root 数据
-            this._injector.get(ILogService).log('远程初始数据：', this._rtContent.value());
-            this._injector.get(ILogService).log('远程初始数据(initContent)：', this._rtContent.value().initContent);
+            // this._injector.get(ILogService).log('远程初始数据：', this._rtContent.value());
+            // this._injector.get(ILogService).log('远程初始数据(initContent)：', this._rtContent.value().initContent);
             const remoteUnit: IWorkbookData = JSON.parse(this._rtContent.value().initContent);
 
             const latestData: IWorkbookData = this._univerInstanceService.getUnit(remoteUnit.id, UniverInstanceType.UNIVER_SHEET)?.getSnapshot() as IWorkbookData;
-            this._injector.get(ILogService).log('设置数据：', latestData);
+            // this._injector.get(ILogService).log('设置数据：', latestData);
             const cloneUnit = Tools.deepClone(latestData);
             this._rtContent.set('initContent', JSON.stringify(cloneUnit));
         });

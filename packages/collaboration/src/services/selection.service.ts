@@ -264,7 +264,7 @@ export class SelectionService extends Disposable {
                     name,
                     avatar,
                 };
-                this._injector.get(ILogService).log(`${e.user.displayName}加入协同`);
+                // this._injector.get(ILogService).log(`${e.user.displayName}加入协同`);
                 break;
             case 'left':
                 aliveParticipants.left = {
@@ -273,7 +273,7 @@ export class SelectionService extends Disposable {
                     name,
                     avatar,
                 };
-                this._injector.get(ILogService).log(`${e.user.displayName}退出协同`);
+                // this._injector.get(ILogService).log(`${e.user.displayName}退出协同`);
                 break;
         }
         return aliveParticipants;
